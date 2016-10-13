@@ -1,36 +1,36 @@
 apiVersion: v1
-kind: ReplicationController
+kind: "ReplicationController"
 metadata:
-  name: QuestionShow-prod-rc-::BUILDNUM::
+  name: "questionshow-prod-rc-::BUILDNUM::"
 spec:
-  replicas: 4
+  replicas: 1
   selector:
-    app: QuestionShow
-    environment: production
+    app: "questionshow"
+    environment: "production"
     commit: "::COMMIT::"
     buildTimestamp: "::TIMESTAMP::"
   template:
     metadata:
       labels:
-        app: QuestionShow
-        environment: production
+        app: "questionshow"
+        environment: "production"
         commit: "::COMMIT::"
         buildTimestamp: "::TIMESTAMP::"
     spec:
       containers:
-      - image: gcr.io/general-gke-cluster/sei-questionshow:latest
-        imagePullPolicy: Always
+      - image: "gcr.io/general-gke-cluster/sei-questionshow:latest"
+        imagePullPolicy: "Always"
         livenessProbe:
           httpGet:
-            path: /
+            path: "/"
             port: 80
-            scheme: HTTP
+            scheme: "HTTP"
           initialDelaySeconds: 15
           timeoutSeconds: 1
-        name: QuestionShow
+        name: "questionshow"
         ports:
         - containerPort: 80
-          protocol: TCP
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
+          protocol: "TCP"
+      dnsPolicy: "ClusterFirst"
+      restartPolicy: "Always"
       terminationGracePeriodSeconds: 30
