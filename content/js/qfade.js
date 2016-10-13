@@ -38,8 +38,8 @@ function SocketsCallback(e) {
         "ownerDisplayName": e.ownerDisplayName,
         "siteBaseHostAddress": e.siteBaseHostAddress
     }
-    console.log("Got entry from site " + q.siteBaseHostAddress + " from realtime");
     if (q.siteBaseHostAddress == "stackoverflow.com") {
+        console.log("Got entry from site " + q.siteBaseHostAddress + " from realtime");
         addQuestion(q);
     }
 }
