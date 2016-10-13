@@ -1,0 +1,56 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>
+    HQ - Question Fade
+</title>
+    <link rel="shortcut icon" href="content/img/favicon.ico">
+    <link rel="apple-touch-icon" href="content/img/apple-touch-icon.png">
+
+    <!--[if IE]>
+    <script src="js/third-party/html5shiv.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" ></script>
+    <script src="content/js/master.js?v=dee3157b08d0"></script>
+    
+    <link rel="stylesheet" type="text/css" href="content/qfade.css" />
+    <script type="text/javascript" src="content/Js/realtime.js"></script>
+    <script type="text/javascript" src="content/Js/qfade.js"></script>
+    <script>
+        // javascript for this page!
+        StackExchange.realtime.subscribeToRealtimeQuestions(
+    'wss://qa.sockets.stackexchange.com',
+    '155-questions-active',
+    getPollingUrl,
+    10,
+    true,
+    SocketsCallback);
+
+        setTimeout(hideDisplay, 3000);
+
+    </script>
+
+</head>
+<body>
+                
+
+
+
+<section>
+           <div class="question visible">
+            <div class="logodiv">
+                <img id="logo48" src="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png"/><br>
+            </div>
+            <div class="questiondiv">
+            <span id="questiontext">What is the meaning of life, the universe, and everything?</span><br><br>
+            <span id="author">- Douglas Adams</span>
+            <span id="queuesize"></span>
+            </div>
+        </div>
+</section>
+
+</body>
+</html>

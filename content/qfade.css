@@ -1,0 +1,59 @@
+﻿body {
+    font-family: 'Helvetica Neue',Helvetica,Arial,Sans-serif;
+    color: white;
+    background: black;
+    font-size: 48px;
+    overflow-Y: hidden;
+    overflowY: hidden;
+}
+.question {
+    margin-top:125px;
+    margin-left:auto;
+    margin-right:auto;
+    width:660px;
+}
+.logodiv {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.7);
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+.questiondiv {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#questiontext {
+}
+#author {
+    float: right;
+}
+#queuesize {
+    float: left;
+    display: none;
+}
+
+#logo48 {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.visible {
+ visibility: visible;
+ opacity: 1;
+ transition: opacity 2s linear;
+ -webkit-transition: opacity 2s linear;
+ -moz-transition: opacity 2s linear;
+ -o-transition: opacity 2s linear;
+
+}
+.hidden {
+ visibility: hidden;
+ opacity: 0;
+ transition: visibility 0s 2s, opacity 2s linear;
+ -webkit-transition: visibility 0s 2s, opacity 2s linear;
+ -moz-transition: visibility 0s 2s, opacity 2s linear;
+ -o-transition: visibility 0s 2s, opacity 2s linear;
+}
