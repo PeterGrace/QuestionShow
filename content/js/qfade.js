@@ -39,7 +39,7 @@ function SocketsCallback(e) {
         "siteBaseHostAddress": e.siteBaseHostAddress
     }
     console.log("Got entry from site " + q.siteBaseHostAddress + " from realtime");
-    if (q.siteBaseHostAddress == "http://stackoverflow.com") {
+    if (q.siteBaseHostAddress == "stackoverflow.com") {
         addQuestion(q);
     }
 }
