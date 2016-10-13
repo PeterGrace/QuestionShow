@@ -11,6 +11,6 @@ spec:
     environment: production
   ports:
   - port: 80 
-    targetPort: 8080
-    nodePort: 31101
-  type: "NodePort"      
+    targetPort: 80
+    protocol: TCP  
+  type: LoadBalancer      
