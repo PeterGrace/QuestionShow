@@ -8,9 +8,8 @@ PauseAPI = false;
 
 $.ajax(
         {
-            url: "http://api.stackexchange.com/sites?key=edpyDS1DZ9KbHZwBS5DIvw((&pagesize=1000&jsonp=jsonp",
-            jsonp: "callback",
-            dataType: "jsonp",
+            url: "sites.json",
+            dataType: "json",
             success: function (sitesInput) {
                 for (var i = 0; i < sitesInput.items.length; i++) {
                     if (/meta/i.test(sitesInput.items[i].site_url)) {
