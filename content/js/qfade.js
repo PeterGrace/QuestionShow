@@ -39,12 +39,14 @@ function SocketsCallback(e) {
         "siteBaseHostAddress": e.siteBaseHostAddress
     }
     console.log("Got entry from site " + q.siteBaseHostAddress + " from realtime");
-    addQuestion(q);
+    if (q.siteBaseHostAddress == "http://stackoverflow.com") {
+        addQuestion(q);
+    }
 }
 
 
 function addQuestion(q) {
-    var qRegexp = /^.*?\bwho\b|\bwhat\b|\bwhere\b|\bwhen\b|\bwhy\b|\bhow\b|.*?\?$/i;
+    var qRegexp = /^\bwho\b|\bwhat\b|\bwhere\b|\bwhen\b|\bwhy\b|\bhow\b|.*?\?$/i;
     if (qRegexp.test(q.titleEncodedFancy)) {
         if (Object.keys(Questions).length <= 150) {
             randomBinary = Math.round(Math.random());
@@ -149,6 +151,7 @@ function showDisplay()
         console.log("Displaying question from " + q.siteBaseHostAddress + ": " + q.titleEncodedFancy);
     } catch(err)
     {
+        alert(err);
         console.log("exception: queue was likely undefined.  Why does this happen?  Resetting the flip-flop.");
         var vDebug = "";
         for (var prop in err)
