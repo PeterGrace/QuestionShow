@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: "Service"
+metadata:
+  name: "questionshow-dev-svc"
+  labels:
+    app: "questionshow"
+    environment: "development"
+spec:
+  selector:
+    app: "questionshow"
+    environment: "development"
+  ports:
+  - port: 80 
+    targetPort: 80
+    nodePort: 31088   
+    protocol: "TCP"  
+  type: "NodePort"
